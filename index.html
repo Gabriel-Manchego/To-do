@@ -5,9 +5,11 @@
     </head>
 <body>
     <h1>To-do</h1>
-    <ul>{% for todo in todos}
+    <ul>
+        {% for todo in todos%}
         <li>
-            {{ todo ['task'] }}}
+            <input type="checkbox" name ="done" {% if tool [ 'done'] %} checked {%endif%} onchange="this.form.submit()">
+            <span>{%if todo ['done'] %} style=text-decoration: line throught" {endif%}>{{todo['task']}}</span>
         </li>
         {% endfor %}
     </ul>
@@ -16,3 +18,4 @@
         <button type ="submit">Add</button>
     </form>
 </body>  
+
